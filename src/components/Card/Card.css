@@ -1,0 +1,53 @@
+.cont-card {
+    width: 100%;
+    height: 100%;
+    border: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 250, 161);
+    margin:  auto 5vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    
+
+
+}
+
+.article-elem {
+    width: 45vw;
+    height: 10vh;
+    text-align: left;
+}
+
+.article-elem li {
+    list-style: none;
+
+}
+
+.par {
+    font-size: 14px;
+    color: black;
+    position: relative;
+
+}
+.par::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com transparência */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Comece com 0% de opacidade */
+    z-index: -1; /* Coloque atrás do texto */
+    animation: fade-in 2s forwards; 
+
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 100%; /* Termine com 100% de opacidade */
+    }
+}
