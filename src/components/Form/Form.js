@@ -8,48 +8,77 @@ import { useMyContext } from '../../app/MyContext'; // Importe useMyContext
 
 export const Form = ({ updateList }) => {
 
-    
+
     const { handleUpdateList } = useMyContext(); // Use a função correta do contexto
 
-   const Context = createContext()
+    const Context = createContext()
+
+    const sortedList = [...ListaService];
+
     const handleClickCrescente = () => {
-        const sortedList = [...ListaService];
-        sortedList.sort((a, b) => a.dataEnvio - b.dataEnvio);
-        handleUpdateList(sortedList);
+        let theList = sortedList.sort((a, b) => a.dataEnvio - b.dataEnvio);
+        handleUpdateList(theList);
         console.log("certo");
-      };
-    
-      const handleClickDecrescente = () => {
-        const sortedList = [...ListaService];
-        sortedList.sort((a, b) => b.dataEnvio - a.dataEnvio);
+    };
+
+    const handleClickDecrescente = () => {
+        let theList = sortedList.sort((a, b) => b.dataEnvio - a.dataEnvio);
         handleUpdateList(sortedList);
         console.log("errado");
 
-      };
+    };
+
+    const search = (event) => {
+        const novoValor = event.target.value;
+        
+        // let finalList = sortedList.filter(e => e.CPF == {novoValor});
+        let finalList = sortedList.filter(e => e.CPF.toLowerCase().includes(novoValor));
+        handleUpdateList(finalList);
+        console.log(finalList);
+
+    };
+    const handleClickMelhoria = () => {
+        let finalList = sortedList.filter(e => e.tipoSugestao == 'Sugestão de melhoria');
+        handleUpdateList(finalList);
+        console.log(sortedList);
+
+    };
+    const handleClickNovo = () => {
+
+        let finalList = sortedList.filter(e => e.tipoSugestao == 'Sugestão de novo produto');
+        handleUpdateList(finalList);
+        console.log(sortedList);
+
+    };
 
     return (
         <div className='cont-principal'>
             <div className='cont-secundario'>
                 <div className='inputs'>
-                <label for="cpf" className='label-input'>Pesquisa por CPF</label>
-                <input type="text" className='inmput-text' name="cpf" /> 
-
+                    <label for="cpf" className='label-input'>Pesquisa por CPF</label>
+                    <input
+                        className='input-text'
+                        name="cpf"
+                        type="text"
+                        placeholder="Search..."
+                        onChange={search}
+                    />
                 </div>
 
             </div>
             <div className='cont-secundario'>
                 <ul className='btn-ul'>
                     <li className='li-btn'>
-                        <button className=''onClick={handleClickCrescente}>Crescente</button>
+                        <button className='' onClick={handleClickCrescente}>Crescente</button>
                     </li>
                     <li className='li-btn' >
                         <button className='' onClick={handleClickDecrescente}>Decrescente</button>
                     </li>
                     <li className='li-btn'>
-                        <button className=''>Novo produto</button>
+                        <button className='' onClick={handleClickNovo}>Novo produto</button>
                     </li>
                     <li className='li-btn'>
-                        <button className=''>Melhoria</button>
+                        <button className='' onClick={handleClickMelhoria}>Melhoria</button>
                     </li>
 
                 </ul>

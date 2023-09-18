@@ -12,8 +12,8 @@ import ListaService from "../../service/testeJson.json"
 
 export const Lista = ({ initialList }) => {
   
-
-    const { sortedList } = useMyContext(); // Use o estado correto do contexto
+     
+    let { sortedList } = useMyContext(); // Use o estado correto do contexto
 
     const Context = createContext()
 
@@ -33,7 +33,7 @@ export const Lista = ({ initialList }) => {
 
 
 
-                {sortedList && sortedList.map((e) => (
+                {sortedList.map((e) => (
                     <li key={e.CPF} className='theli'>
                         <Cards
                             nome={e.Nome}
