@@ -15,10 +15,10 @@ export default function Home() {
   return (
     <MyContextProvider> {/* Fornece o contexto */}
       <div>
-        <section className='posicao'>
+        <section className='posicao posicao-head'>
           <Form  />
         </section>
-        <section className='posicao'>
+        <section className='posicao posicao-lista'>
            <Lista />
         </section>
       </div>

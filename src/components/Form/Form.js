@@ -60,7 +60,7 @@ export const Form = ({ updateList }) => {
                         className='input-text'
                         name="cpf"
                         type="text"
-                        placeholder="Search..."
+                        placeholder="Pesquisar..."
                         onChange={search}
                     />
                 </div>

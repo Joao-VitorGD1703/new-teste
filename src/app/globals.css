@@ -111,6 +111,7 @@ padding: 0;
 margin: 0;
 box-sizing: border-box;
 overflow-x: hidden;
+background-color: #d3c6e8;
 }
 
 .container-layout{
@@ -131,4 +132,13 @@ overflow-x: hidden;
   display: flex;
   width: 100%;
   margin-left: 15vw;
+}
+.posicao-head{
+  position: fixed;
+  margin-bottom: 5vh;
+}
+
+.posicao-lista{
+  margin-top: 30vh;
+
 }
