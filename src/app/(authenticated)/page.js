@@ -3,10 +3,10 @@ import { createContext } from 'react'
 
 import React from 'react';
 
-import './globals.css';
+import '../globals.css';
 import { Form } from '@/components/Form/Form';
 import { Lista } from '@/components/ListaSugestao/Lista';
-import ListaService from '../service/testeJson.json';
+import ListaService from '../../service/testeJson.json';
 import { MyContextProvider } from './MyContext'; // Importe o provedor do contexto
 
 export default function Home() {

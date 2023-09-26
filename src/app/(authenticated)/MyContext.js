@@ -1,6 +1,6 @@
 'use client'
 import React, { createContext, useState, useContext } from 'react';
-import listaJson from '../service/testeJson.json'
+import listaJson from '../../service/testeJson.json'
 
 const MyContext = createContext();
 

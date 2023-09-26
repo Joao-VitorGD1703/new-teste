@@ -1,8 +1,8 @@
-import './globals.css'
+import '../globals.css'
 
 
 import { Inter } from 'next/font/google'
-import { Header } from '../components/Header/Header'
+import { Header } from '../../components/Header/Header'
 import Home from './page'
 import { Formlista } from '@/components/FormLIsta/Formlista'
 // import { Base } from './Listagem/Base'
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           <Header />
         </div>
         <div className='teste'>
-          <Home/>
+          <Home />
         </div>
 
       </body>

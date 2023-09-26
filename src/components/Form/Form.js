@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import "./Form.css"
 import ListaService from '../../service/testeJson.json';
 // import {crescente, descresente, sugestao } from '../../service/func'
-import { useMyContext } from '../../app/MyContext'; // Importe useMyContext
+import { useMyContext } from '../../app/(authenticated)/MyContext'; // Importe useMyContext
 
 export const Form = ({ updateList }) => {
 
@@ -30,7 +30,7 @@ export const Form = ({ updateList }) => {
 
     const search = (event) => {
         const novoValor = event.target.value;
-        
+
         // let finalList = sortedList.filter(e => e.CPF == {novoValor});
         let finalList = sortedList.filter(e => e.CPF.toLowerCase().includes(novoValor));
         handleUpdateList(finalList);
@@ -69,10 +69,10 @@ export const Form = ({ updateList }) => {
             <div className='cont-secundario'>
                 <ul className='btn-ul'>
                     <li className='li-btn'>
-                        <button className='' onClick={handleClickCrescente}>Crescente</button>
+                        <button className='' onClick={handleClickCrescente}>Ordem Crescente</button>
                     </li>
                     <li className='li-btn' >
-                        <button className='' onClick={handleClickDecrescente}>Decrescente</button>
+                        <button className='' onClick={handleClickDecrescente}>Ordem Decrescente</button>
                     </li>
                     <li className='li-btn'>
                         <button className='' onClick={handleClickNovo}>Novo produto</button>

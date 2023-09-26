@@ -1,6 +1,6 @@
 'use client'
 import { createContext } from 'react'
-import { useMyContext } from '../../app/MyContext'; // Importe useMyContext
+import { useMyContext } from '../../app/(authenticated)/MyContext'; // Importe useMyContext
 
 
 import React from 'react'
@@ -11,8 +11,8 @@ import ListaService from "../../service/testeJson.json"
 
 
 export const Lista = ({ initialList }) => {
-  
-     
+
+
     let { sortedList } = useMyContext(); // Use o estado correto do contexto
 
     const Context = createContext()
